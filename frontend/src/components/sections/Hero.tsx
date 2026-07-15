@@ -13,25 +13,25 @@ import { site } from "@/lib/site";
 /* ------------------------------------------------------------------ */
 
 function LogoReveal({ reduced }: { reduced: boolean }) {
-  const imgClassName =
-    "h-[46svh] max-h-[430px] min-h-[280px] w-auto select-none drop-shadow-[0_0_45px_rgba(245,158,11,0.35)]";
+  const boxClassName =
+    "logo-gold h-[46svh] max-h-[430px] min-h-[280px] select-none drop-shadow-[0_0_45px_rgba(245,158,11,0.35)]";
 
   if (reduced) {
     return (
-      <img
-        src="/logo.png"
-        alt="Haval Barber – Haircuts & Shaves"
-        className={imgClassName}
+      <div
+        role="img"
+        aria-label="Haval Barber – Haircuts & Shaves"
+        className={boxClassName}
         data-testid="hero-logo"
       />
     );
   }
 
   return (
-    <motion.img
-      src="/logo.png"
-      alt="Haval Barber – Haircuts & Shaves"
-      className={imgClassName}
+    <motion.div
+      role="img"
+      aria-label="Haval Barber – Haircuts & Shaves"
+      className={boxClassName}
       data-testid="hero-logo"
       initial={{ opacity: 0, y: motionTokens.distance.xl, scale: 0.94 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}

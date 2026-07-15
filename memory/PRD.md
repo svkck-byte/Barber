@@ -26,6 +26,8 @@ Privates GitHub-Repo `svkck-byte/haval-barber` klonen und einrichten. Nutzer mö
 ## Status
 - [x] Repo geklont & lauffähig eingerichtet (Preview funktioniert, Hydration ok)
 - [x] Firmenlogo integriert (15.06.2026): Hero zeigt jetzt das Logo (public/logo.png, weiß auf transparent umgefärbt aus Kundendatei) mit Gold-Glow + Fade/Scale-Entrance. Ersetzt die frühere animierte Wortmarke + Rasiermesser-SVG. SEO: sr-only h1.
+- [x] Logo farblich angepasst (15.06.2026): CSS-Klasse .logo-gold (globals.css) nutzt logo.png als mask-image mit Brand-Gold-Gradient als Füllung
+- [x] Navbar-Logo + Favicon (15.06.2026): Navbar zeigt Logo (h-14, .logo-gold) statt Text-Schriftzug; Favicon (src/app/favicon.ico) generiert: dunkler Hintergrund + goldenes Logo
 - [ ] Design-Iterationen nach Nutzer-Feedback
 
 ## Backlog / Offene Punkte

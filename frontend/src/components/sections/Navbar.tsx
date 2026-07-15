@@ -53,11 +53,17 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/#start"
-          className="font-display text-xl font-semibold uppercase tracking-wider"
+          aria-label="Haval Barber – zur Startsektion"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          data-testid="navbar-logo"
         >
-          <span className="text-ink">Haval</span>{" "}
-          <span className="text-gradient-gold">Barber</span>
+          <span
+            role="img"
+            aria-hidden
+            className="logo-gold h-14 transition-transform duration-300 hover:scale-105"
+          />
+          <span className="sr-only">Haval Barber</span>
         </Link>
 
         {/* Desktop-Navigation */}
