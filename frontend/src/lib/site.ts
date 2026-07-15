@@ -260,35 +260,46 @@ export const team: TeamMember[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Bewertungen (realistische Platzhalter)                              */
+/* Bewertungen — echte Facebook-Rezensionen (facebook.com/hval255)     */
 /* ------------------------------------------------------------------ */
 
 export type Review = {
   name: string;
   text: string;
   rating: number;
+  date?: string;
 };
 
 export const reviews: Review[] = [
   {
-    name: "Miguel S.",
-    text: "Bester Fade in Emmerich, ohne Diskussion. Haval nimmt sich Zeit und das Ergebnis sitzt jedes Mal.",
+    name: "Adrian J.",
+    text: "Sehr gut, perfekt und immer nett.",
     rating: 5,
+    date: "Juni 2026",
   },
   {
-    name: "Jonas K.",
-    text: "Royal Shave mit heißem Handtuch — fühlt sich an wie Kurzurlaub. Absolute Empfehlung.",
+    name: "Christian K.",
+    text: "Bester Mann!",
     rating: 5,
+    date: "Juni 2022",
   },
   {
-    name: "Firat D.",
-    text: "Termin per WhatsApp gemacht, pünktlich drangekommen, top Beratung. So muss das.",
+    name: "Andrzej K.",
+    text: "Polecam! Man kann auf Deutsch und Englisch sprechen — bequeme Plätze, toll mit Kindern, echter Meister-Stylist.",
     rating: 5,
+    date: "Dezember 2024",
   },
   {
-    name: "Lukas B.",
-    text: "Mein Sohn (8) geht sonst ungern zum Friseur — hier fühlt er sich wohl. Danke an das Team!",
+    name: "Miron A.",
+    text: "The best! Recomand.",
     rating: 5,
+    date: "Mai 2024",
+  },
+  {
+    name: "Agnieszka A.",
+    text: "Danke für den Besuch — der Kleine ist super zufrieden. Ein Meister seines Fachs!",
+    rating: 5,
+    date: "Juli 2022",
   },
 ];
 

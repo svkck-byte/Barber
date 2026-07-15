@@ -3,7 +3,7 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { StarIcon } from "@/components/ui/icons";
-import { reviews } from "@/lib/site";
+import { reviews, site } from "@/lib/site";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -19,7 +19,7 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-/** Kundenstimmen (Platzhalter). TODO: Durch echte Google-Bewertungen ersetzen. */
+/** Kundenstimmen — echte Empfehlungen von unserer Facebook-Seite. */
 export function Reviews() {
   return (
     <section id="bewertungen" className="px-4 py-24 sm:px-6 md:py-32">
@@ -27,24 +27,44 @@ export function Reviews() {
         <SectionHeading
           eyebrow="Bewertungen"
           title="Was unsere Kunden sagen"
-          description="4,9 von 5 Sternen bei über 320 Google-Bewertungen."
+          description="100 % Weiterempfehlung auf Facebook — hier ein paar Stimmen."
         />
 
-        <RevealGroup className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {reviews.map((review) => (
             <RevealItem key={review.name} className="h-full">
-              <figure className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6">
+              <figure
+                className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6"
+                data-testid={`review-${review.name.replace(/[^a-zA-Z]/g, "")}`}
+              >
                 <Stars rating={review.rating} />
                 <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink">
                   „{review.text}“
                 </blockquote>
-                <figcaption className="mt-4 text-sm font-semibold text-muted">
-                  {review.name}
+                <figcaption className="mt-4 flex items-baseline justify-between gap-3 text-sm">
+                  <span className="font-semibold text-muted">{review.name}</span>
+                  {review.date && (
+                    <span className="text-xs text-muted/70">{review.date}</span>
+                  )}
                 </figcaption>
               </figure>
             </RevealItem>
           ))}
         </RevealGroup>
+
+        <p className="mt-8 text-center text-sm text-muted">
+          Quelle:{" "}
+          <a
+            href={site.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-accent underline-offset-4 hover:underline"
+            data-testid="reviews-facebook-link"
+          >
+            Facebook-Bewertungen
+          </a>{" "}
+          — 5 von 5 Empfehlungen.
+        </p>
       </div>
     </section>
   );

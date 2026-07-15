@@ -35,6 +35,7 @@ Privates GitHub-Repo `svkck-byte/haval-barber` klonen und einrichten. Nutzer mö
   - Galerie: 8 echte Kundenfotos (public/gallery/*.jpg, next/image), Standort-Karte zeigt echtes Ladenfoto (public/shop-front.jpg)
   - TrustBand-Stats auf echte FB-Zahlen umgestellt
   - OFFEN: Telefon/WhatsApp-Nummer & Öffnungszeiten auf FB nicht öffentlich einsehbar → weiterhin Platzhalter
+- [x] Echte Bewertungen (15.06.2026): 5 echte FB-Rezensionen (Adrian J., Christian K., Andrzej K., Miron A., Agnieszka A.) in site.ts + Reviews.tsx (3-Spalten-Grid, Datum, Quelllink zur FB-Seite). Fremdsprachige Texte sinngemäß übersetzt, Nachnamen abgekürzt.
 - [ ] Design-Iterationen nach Nutzer-Feedback
 
 ## Backlog / Offene Punkte
