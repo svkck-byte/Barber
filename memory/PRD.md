@@ -25,7 +25,8 @@ Privates GitHub-Repo `svkck-byte/haval-barber` klonen und einrichten. Nutzer mö
 
 ## Status
 - [x] Repo geklont & lauffähig eingerichtet (Preview funktioniert, Hydration ok)
-- [ ] Design-Iterationen nach Nutzer-Feedback (Nutzer entscheidet als Nächstes)
+- [x] Firmenlogo integriert (15.06.2026): Hero zeigt jetzt das Logo (public/logo.png, weiß auf transparent umgefärbt aus Kundendatei) mit Gold-Glow + Fade/Scale-Entrance. Ersetzt die frühere animierte Wortmarke + Rasiermesser-SVG. SEO: sr-only h1.
+- [ ] Design-Iterationen nach Nutzer-Feedback
 
 ## Backlog / Offene Punkte
 - P0: Nutzer-Feedback zum Design einholen und umsetzen
