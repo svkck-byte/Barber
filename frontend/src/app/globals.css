@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design-Tokens — Dark-only, Gold→Bernstein-Neon                      */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --color-bg: #0a0a0b;
+  --color-surface: #141416;
+  --color-surface-2: #1c1c1f;
+  --color-line: #27272b;
+  --color-ink: #f5f5f4;
+  --color-muted: #a1a1aa;
+  --color-accent: #f59e0b;
+  --color-gold-soft: #fde68a;
+  --color-gold-deep: #b45309;
+
+  --font-display: var(--font-oswald), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Anker landen unterhalb der fixen Navbar */
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* Kein horizontaler Scroll — Glows/Transforms dürfen nicht ausbrechen */
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Gold-Neon-Utilities                                                 */
+/* ------------------------------------------------------------------ */
+
+.gradient-gold {
+  background-image: linear-gradient(
+    120deg,
+    var(--color-gold-soft),
+    var(--color-accent) 45%,
+    var(--color-gold-deep)
+  );
+}
+
+.gradient-gold-vertical {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-gold-soft),
+    var(--color-accent) 45%,
+    var(--color-gold-deep)
+  );
+}
+
+.text-gradient-gold {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold-soft),
+    var(--color-accent) 55%,
+    var(--color-gold-deep)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glow-gold {
+  box-shadow:
+    0 0 24px rgba(245, 158, 11, 0.25),
+    0 0 64px rgba(245, 158, 11, 0.12);
+}
+
+.glow-gold-strong {
+  box-shadow:
+    0 0 32px rgba(245, 158, 11, 0.4),
+    0 0 96px rgba(245, 158, 11, 0.18);
+}
+
+/* Wandernder Schimmer für animierte Gradient-Borders */
+@keyframes gold-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-gold-pan {
+  background-size: 200% 200%;
+  animation: gold-pan 6s linear infinite;
+}
+
+/* Atmender Gold-Glow im Hero (nur opacity — GPU-günstig) */
+@keyframes glow-breathe {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-glow-breathe {
+  animation: glow-breathe 8s ease-in-out infinite;
+}
+
+/* Feines Film-Grain für den Hero */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced Motion — CSS-Animationen hart abschalten                    */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-gold-pan,
+  .animate-glow-breathe {
+    animation: none;
+  }
+}
