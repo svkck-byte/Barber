@@ -3,6 +3,7 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GradientBorder } from "@/components/ui/GradientBorder";
 import { Reveal } from "@/components/motion/Reveal";
+import Image from "next/image";
 import { ClockIcon, MapPinIcon } from "@/components/ui/icons";
 import { site } from "@/lib/site";
 import { motionTokens } from "@/lib/motion/tokens";
@@ -60,25 +61,32 @@ export function HoursLocation() {
             </GradientBorder>
           </Reveal>
 
-          {/* Standort / Karten-Platzhalter */}
+          {/* Standort mit echtem Ladenfoto */}
           <Reveal className="h-full" delay={motionTokens.stagger.items}>
-            {/* TODO: Bei Bedarf echtes Karten-Embed (z. B. Google Maps iframe)
-                einsetzen — Datenschutzhinweis in der Datenschutzerklärung
-                ist dafür bereits vorbereitet. */}
-            <div className="relative flex h-full min-h-72 flex-col items-center justify-center overflow-hidden rounded-2xl border border-line bg-surface p-8 text-center">
-              {/* Dezentes Raster als Karten-Andeutung */}
+            <div
+              className="relative flex h-full min-h-72 flex-col items-center justify-end overflow-hidden rounded-2xl border border-line bg-surface p-8 text-center"
+              data-testid="location-card"
+            >
+              {/* Echtes Foto der Ladenfront */}
+              <Image
+                src="/shop-front.jpg"
+                alt={`Ladenfront von ${site.name} in ${site.address.city}`}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
               <div
                 aria-hidden
-                className="absolute inset-0 opacity-40 [background-image:linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)] [background-size:48px_48px]"
+                className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/40 to-bg/10"
               />
               <div className="relative">
-                <span className="glow-gold mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <span className="glow-gold mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-accent/10 text-accent backdrop-blur-sm">
                   <MapPinIcon size={26} />
                 </span>
                 <h3 className="font-display text-2xl font-semibold uppercase tracking-wide text-ink">
                   {site.name}
                 </h3>
-                <address className="mt-3 text-base not-italic leading-relaxed text-muted">
+                <address className="mt-3 text-base not-italic leading-relaxed text-ink/90">
                   {site.address.street}
                   <br />
                   {site.address.zip} {site.address.city}
@@ -87,7 +95,7 @@ export function HoursLocation() {
                   href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-line px-6 text-sm font-semibold text-ink transition-colors hover:border-accent/60"
+                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-ink/30 bg-bg/50 px-6 text-sm font-semibold text-ink backdrop-blur-sm transition-colors hover:border-accent/60"
                 >
                   Route planen
                 </a>

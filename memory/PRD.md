@@ -28,6 +28,13 @@ Privates GitHub-Repo `svkck-byte/haval-barber` klonen und einrichten. Nutzer mö
 - [x] Firmenlogo integriert (15.06.2026): Hero zeigt jetzt das Logo (public/logo.png, weiß auf transparent umgefärbt aus Kundendatei) mit Gold-Glow + Fade/Scale-Entrance. Ersetzt die frühere animierte Wortmarke + Rasiermesser-SVG. SEO: sr-only h1.
 - [x] Logo farblich angepasst (15.06.2026): CSS-Klasse .logo-gold (globals.css) nutzt logo.png als mask-image mit Brand-Gold-Gradient als Füllung
 - [x] Navbar-Logo + Favicon (15.06.2026): Navbar zeigt Logo (h-14, .logo-gold) statt Text-Schriftzug; Favicon (src/app/favicon.ico) generiert: dunkler Hintergrund + goldenes Logo
+- [x] Facebook-Daten & echte Fotos integriert (15.06.2026):
+  - Quelle: facebook.com/hval255 ("Haval . Barber", 562 Follower, 100% Empfehlung/5 Reviews)
+  - Echte Adresse: Steinstraße 3, 46446 Emmerich am Rhein (vorher Platzhalter Dortmund!) — site.ts, JSON-LD, Hero-Eyebrow, Maps-Link
+  - Instagram: instagram.com/haval.barber.1; site.facebook ergänzt
+  - Galerie: 8 echte Kundenfotos (public/gallery/*.jpg, next/image), Standort-Karte zeigt echtes Ladenfoto (public/shop-front.jpg)
+  - TrustBand-Stats auf echte FB-Zahlen umgestellt
+  - OFFEN: Telefon/WhatsApp-Nummer & Öffnungszeiten auf FB nicht öffentlich einsehbar → weiterhin Platzhalter
 - [ ] Design-Iterationen nach Nutzer-Feedback
 
 ## Backlog / Offene Punkte

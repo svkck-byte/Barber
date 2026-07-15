@@ -2,14 +2,11 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/motion/Reveal";
-import { ScissorsIcon } from "@/components/ui/icons";
+import Image from "next/image";
 import { galleryItems } from "@/lib/site";
-import { cx } from "@/lib/cx";
 
 /**
- * Galerie mit CSS-Gradient-Platzhaltern (keine externen Assets).
- * TODO: Durch echte Fotos ersetzen — Bilder nach `public/gallery/` legen
- * und die <div>-Platzhalter gegen <Image>-Komponenten (next/image) tauschen.
+ * Galerie mit echten Fotos aus dem Shop (public/gallery/).
  */
 export function Gallery() {
   return (
@@ -18,27 +15,23 @@ export function Gallery() {
         <SectionHeading
           eyebrow="Galerie"
           title="Ergebnisse, die für sich sprechen"
-          description="Ein Ausschnitt unserer Arbeit — mehr davon täglich auf Instagram."
+          description="Ein Ausschnitt unserer Arbeit — mehr davon täglich auf Instagram und Facebook."
         />
 
         <RevealGroup className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
           {galleryItems.map((item) => (
             <RevealItem key={item.label}>
-              <figure className="group relative aspect-square overflow-hidden rounded-xl border border-line">
-                {/* Platzhalter-Fläche (TODO: echtes Foto) */}
-                <div
-                  role="img"
-                  aria-label={`Platzhalter-Bild: ${item.label}`}
-                  className={cx(
-                    "absolute inset-0 bg-gradient-to-br transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100",
-                    item.tone,
-                  )}
-                >
-                  <ScissorsIcon
-                    size={48}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-accent/20"
-                  />
-                </div>
+              <figure
+                className="group relative aspect-square overflow-hidden rounded-xl border border-line"
+                data-testid={`gallery-item-${item.src.split("/").pop()?.replace(".jpg", "")}`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
                 {/* Verlauf für Label-Lesbarkeit */}
                 <div
                   aria-hidden

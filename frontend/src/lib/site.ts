@@ -8,10 +8,10 @@ export const site = {
   name: "Haval Barber",
   tagline: "Präzision. Stil. Handwerk.",
   description:
-    "Haval Barber – dein Barbershop in Dortmund. Präzise Haarschnitte, klassische Rasur mit heißem Handtuch und perfekte Bartkonturen. Termin einfach per WhatsApp oder Telefon.",
+    "Haval Barber – dein Barbershop in Emmerich am Rhein. Präzise Haarschnitte, klassische Rasur mit heißem Handtuch und perfekte Bartkonturen. Termin einfach per WhatsApp oder Telefon.",
 
   // TODO: Echte Telefonnummer eintragen (Format: +49 und Vorwahl ohne 0)
-  phoneDisplay: "+49 231 XXXXXXX",
+  phoneDisplay: "+49 2822 XXXXXXX",
   phoneHref: "tel:+49XXXXXXXXXX",
   // TODO: Echte WhatsApp-Nummer eintragen (nur Ziffern, mit Ländercode)
   whatsappHref: "https://wa.me/49XXXXXXXXXX",
@@ -19,14 +19,13 @@ export const site = {
 
   // TODO: Echte E-Mail-Adresse eintragen
   email: "info@haval-barber.de",
-  // TODO: Echtes Instagram-Profil eintragen
-  instagram: "https://instagram.com/havalbarber",
+  instagram: "https://instagram.com/haval.barber.1",
+  facebook: "https://www.facebook.com/hval255",
 
-  // TODO: Echte Adresse eintragen
   address: {
-    street: "Musterstraße 12",
-    zip: "44135",
-    city: "Dortmund",
+    street: "Steinstraße 3",
+    zip: "46446",
+    city: "Emmerich am Rhein",
     region: "NRW",
     country: "DE",
   },
@@ -222,10 +221,10 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { value: 12, suffix: "+", label: "Jahre Erfahrung" },
-  { value: 8500, suffix: "+", label: "Zufriedene Kunden" },
-  { value: 4.9, decimals: 1, label: "Google-Bewertung" },
-  { value: 320, suffix: "+", label: "Bewertungen" },
+  { value: 100, suffix: " %", label: "Weiterempfehlung auf Facebook" },
+  { value: 5.0, decimals: 1, label: "Bewertung (5 Sterne)" },
+  { value: 560, suffix: "+", label: "Follower auf Facebook" },
+  { value: 1600, suffix: "+", label: "Views unserer Reels" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -273,7 +272,7 @@ export type Review = {
 export const reviews: Review[] = [
   {
     name: "Miguel S.",
-    text: "Bester Fade in Dortmund, ohne Diskussion. Haval nimmt sich Zeit und das Ergebnis sitzt jedes Mal.",
+    text: "Bester Fade in Emmerich, ohne Diskussion. Haval nimmt sich Zeit und das Ergebnis sitzt jedes Mal.",
     rating: 5,
   },
   {
@@ -294,23 +293,22 @@ export const reviews: Review[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Galerie-Platzhalter                                                 */
-/* TODO: Durch echte Fotos ersetzen (public/gallery/*.jpg + next/image) */
+/* Galerie — echte Fotos aus dem Shop (Quelle: Facebook-Seite)         */
 /* ------------------------------------------------------------------ */
 
 export type GalleryItem = {
   label: string;
-  /** Tailwind-Klassen für den Gradient-Platzhalter */
-  tone: string;
+  /** Bildpfad unterhalb von public/ */
+  src: string;
 };
 
 export const galleryItems: GalleryItem[] = [
-  { label: "Skin Fade mit Kontur", tone: "from-stone-800 via-surface to-bg" },
-  { label: "Bartkontur & Pflege", tone: "from-amber-950/60 via-surface to-bg" },
-  { label: "Klassischer Seitenscheitel", tone: "from-zinc-800 via-surface to-bg" },
-  { label: "Royal Shave", tone: "from-stone-900 via-surface-2 to-bg" },
-  { label: "Modern Crop", tone: "from-neutral-800 via-surface to-bg" },
-  { label: "Low Taper Fade", tone: "from-amber-900/40 via-surface to-bg" },
-  { label: "Vollbart-Trimm", tone: "from-zinc-900 via-surface-2 to-bg" },
-  { label: "Buzz Cut mit Linie", tone: "from-stone-800 via-surface-2 to-bg" },
+  { label: "Skin Fade mit Kontur", src: "/gallery/skin-fade.jpg" },
+  { label: "Bart & Skin Fade", src: "/gallery/bart-fade.jpg" },
+  { label: "Hard Part mit Linie", src: "/gallery/hard-part.jpg" },
+  { label: "Freestyle-Design", src: "/gallery/freestyle-kreuz.jpg" },
+  { label: "Modern Crop", src: "/gallery/modern-crop.jpg" },
+  { label: "Low Taper Fade", src: "/gallery/low-taper.jpg" },
+  { label: "Vollbart & Fade", src: "/gallery/vollbart.jpg" },
+  { label: "Zickzack-Design", src: "/gallery/zickzack.jpg" },
 ];
