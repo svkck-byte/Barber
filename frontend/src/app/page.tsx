@@ -4,7 +4,6 @@ import { TrustBand } from "@/components/sections/TrustBand";
 import { Services } from "@/components/sections/Services";
 import { Pricing } from "@/components/sections/Pricing";
 import { Gallery } from "@/components/sections/Gallery";
-import { Team } from "@/components/sections/Team";
 import { Reviews } from "@/components/sections/Reviews";
 import { HoursLocation } from "@/components/sections/HoursLocation";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -55,7 +54,6 @@ export default function Home() {
         <Services />
         <Pricing />
         <Gallery />
-        <Team />
         <Reviews />
         <HoursLocation />
         <CtaBand />

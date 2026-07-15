@@ -228,38 +228,6 @@ export const stats: Stat[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Team                                                                */
-/* ------------------------------------------------------------------ */
-
-export type TeamMember = {
-  name: string;
-  role: string;
-  bio: string;
-  initials: string;
-};
-
-export const team: TeamMember[] = [
-  {
-    name: "Haval",
-    role: "Inhaber · Master Barber",
-    bio: "Über 12 Jahre Handwerk. Spezialist für klassische Schnitte und Nassrasur.",
-    initials: "HA",
-  },
-  {
-    name: "Deniz",
-    role: "Barber",
-    bio: "Der Fade-Experte im Team — von Low bis High Skin Fade.",
-    initials: "DE",
-  },
-  {
-    name: "Aram",
-    role: "Barber",
-    bio: "Bart-Spezialist mit ruhiger Hand und Auge fürs Detail.",
-    initials: "AR",
-  },
-];
-
-/* ------------------------------------------------------------------ */
 /* Bewertungen — echte Facebook-Rezensionen (facebook.com/hval255)     */
 /* ------------------------------------------------------------------ */
 

@@ -14,7 +14,6 @@ const NAV_LINKS = [
   { href: "/#leistungen", label: "Leistungen" },
   { href: "/#preise", label: "Preise" },
   { href: "/#galerie", label: "Galerie" },
-  { href: "/#team", label: "Team" },
   { href: "/#bewertungen", label: "Bewertungen" },
   { href: "/#kontakt", label: "Kontakt" },
 ] as const;
