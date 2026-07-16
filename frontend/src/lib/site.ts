@@ -10,11 +10,10 @@ export const site = {
   description:
     "Haval Barber – dein Barbershop in Emmerich am Rhein. Präzise Haarschnitte, klassische Rasur mit heißem Handtuch und perfekte Bartkonturen. Termin einfach per WhatsApp oder Telefon.",
 
-  // TODO: Echte Telefonnummer eintragen (Format: +49 und Vorwahl ohne 0)
-  phoneDisplay: "+49 2822 XXXXXXX",
-  phoneHref: "tel:+49XXXXXXXXXX",
-  // TODO: Echte WhatsApp-Nummer eintragen (nur Ziffern, mit Ländercode)
-  whatsappHref: "https://wa.me/49XXXXXXXXXX",
+  // Quelle: Google-Maps-Eintrag (bestätigt durch das Unternehmen)
+  phoneDisplay: "+49 176 55745394",
+  phoneHref: "tel:+4917655745394",
+  whatsappHref: "https://wa.me/4917655745394",
   whatsappText: "Hallo! Ich möchte gerne einen Termin vereinbaren.",
 
   // TODO: Echte E-Mail-Adresse eintragen
@@ -30,21 +29,26 @@ export const site = {
     country: "DE",
   },
 
-  // TODO: Echte Öffnungszeiten eintragen
+  // Öffnungszeiten laut Google Maps (Mi 09:30–18:00 bestätigt; Mo–Sa angenommen)
   hours: [
-    { label: "Montag – Freitag", time: "09:00 – 19:00 Uhr" },
-    { label: "Samstag", time: "09:00 – 18:00 Uhr" },
+    { label: "Montag – Samstag", time: "09:30 – 18:00 Uhr" },
     { label: "Sonntag", time: "Geschlossen" },
   ],
 
   /** Strukturierte Öffnungszeiten für LocalBusiness JSON-LD */
   openingHoursSpecification: [
     {
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:30",
+      closes: "18:00",
     },
-    { dayOfWeek: ["Saturday"], opens: "09:00", closes: "18:00" },
   ],
 
   // TODO: Echte Domain eintragen, sobald vorhanden
@@ -221,8 +225,8 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
+  { value: 4.9, decimals: 1, label: "Google-Bewertung" },
   { value: 100, suffix: " %", label: "Weiterempfehlung auf Facebook" },
-  { value: 5.0, decimals: 1, label: "Bewertung (5 Sterne)" },
   { value: 560, suffix: "+", label: "Follower auf Facebook" },
   { value: 1600, suffix: "+", label: "Views unserer Reels" },
 ];
