@@ -29,25 +29,30 @@ export const site = {
     country: "DE",
   },
 
-  // Öffnungszeiten laut Google Maps (Mi 09:30–18:00 bestätigt; Mo–Sa angenommen)
+  // Öffnungszeiten vom Inhaber bestaetigt (Stand 2026-08-31)
   hours: [
-    { label: "Montag – Samstag", time: "09:30 – 18:00 Uhr" },
+    { label: "Montag – Donnerstag", time: "09:30 – 18:00 Uhr" },
+    { label: "Freitag", time: "09:30 – 19:30 Uhr" },
+    { label: "Samstag", time: "09:00 – 16:30 Uhr" },
     { label: "Sonntag", time: "Geschlossen" },
   ],
 
   /** Strukturierte Öffnungszeiten für LocalBusiness JSON-LD */
   openingHoursSpecification: [
     {
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
       opens: "09:30",
       closes: "18:00",
+    },
+    {
+      dayOfWeek: ["Friday"],
+      opens: "09:30",
+      closes: "19:30",
+    },
+    {
+      dayOfWeek: ["Saturday"],
+      opens: "09:00",
+      closes: "16:30",
     },
   ],
 
